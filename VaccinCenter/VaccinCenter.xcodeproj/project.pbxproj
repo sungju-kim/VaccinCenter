@@ -20,6 +20,7 @@
 		6CEA9D8028EDC1640052B403 /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D7F28EDC1640052B403 /* NetworkRepository.swift */; };
 		6CEA9D8228EDC2690052B403 /* CentersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D8128EDC2690052B403 /* CentersRepository.swift */; };
 		6CEA9D8428EDC2A70052B403 /* CentersRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D8328EDC2A70052B403 /* CentersRepositoryImpl.swift */; };
+		6CEA9D8628EDC47F0052B403 /* NetworkContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D8528EDC47F0052B403 /* NetworkContainer.swift */; };
 		6CF8C25028ED7E4300496057 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF8C24F28ED7E4300496057 /* AppDelegate.swift */; };
 		6CF8C25228ED7E4300496057 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF8C25128ED7E4300496057 /* SceneDelegate.swift */; };
 		6CF8C25428ED7E4300496057 /* CenterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF8C25328ED7E4300496057 /* CenterListViewController.swift */; };
@@ -47,6 +48,7 @@
 		6CEA9D7F28EDC1640052B403 /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
 		6CEA9D8128EDC2690052B403 /* CentersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentersRepository.swift; sourceTree = "<group>"; };
 		6CEA9D8328EDC2A70052B403 /* CentersRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentersRepositoryImpl.swift; sourceTree = "<group>"; };
+		6CEA9D8528EDC47F0052B403 /* NetworkContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContainer.swift; sourceTree = "<group>"; };
 		6CF8C24C28ED7E4300496057 /* VaccinCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VaccinCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CF8C24F28ED7E4300496057 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CF8C25128ED7E4300496057 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				6CEA9D7A28EDBE4F0052B403 /* NetworkManager.swift */,
 				6CEA9D7C28EDBE970052B403 /* NetworkError.swift */,
+				6CEA9D8528EDC47F0052B403 /* NetworkContainer.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				6CEA9D8428EDC2A70052B403 /* CentersRepositoryImpl.swift in Sources */,
 				6CEA9D6C28EDA8900052B403 /* CenterListViewModel.swift in Sources */,
 				6CF8C25028ED7E4300496057 /* AppDelegate.swift in Sources */,
+				6CEA9D8628EDC47F0052B403 /* NetworkContainer.swift in Sources */,
 				6CEA9D7328EDB5030052B403 /* Center.swift in Sources */,
 				6CEA9D7828EDB7E90052B403 /* Requetable.swift in Sources */,
 				6CEA9D7D28EDBE970052B403 /* NetworkError.swift in Sources */,
