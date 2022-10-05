@@ -23,6 +23,7 @@
 		6CEA9D8628EDC47F0052B403 /* NetworkContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D8528EDC47F0052B403 /* NetworkContainer.swift */; };
 		6CEA9D8828EDC4BC0052B403 /* NetworkInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D8728EDC4BC0052B403 /* NetworkInjector.swift */; };
 		6CEA9D8A28EDF1780052B403 /* Reactive + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D8928EDF1780052B403 /* Reactive + extension.swift */; };
+		6CEA9D8D28EDF7500052B403 /* CenterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D8C28EDF7500052B403 /* CenterDetailViewController.swift */; };
 		6CEA9D8F28EDF7580052B403 /* CenterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D8E28EDF7580052B403 /* CenterDetailViewModel.swift */; };
 		6CF8C25028ED7E4300496057 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF8C24F28ED7E4300496057 /* AppDelegate.swift */; };
 		6CF8C25228ED7E4300496057 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF8C25128ED7E4300496057 /* SceneDelegate.swift */; };
@@ -54,6 +55,7 @@
 		6CEA9D8528EDC47F0052B403 /* NetworkContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContainer.swift; sourceTree = "<group>"; };
 		6CEA9D8728EDC4BC0052B403 /* NetworkInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInjector.swift; sourceTree = "<group>"; };
 		6CEA9D8928EDF1780052B403 /* Reactive + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive + extension.swift"; sourceTree = "<group>"; };
+		6CEA9D8C28EDF7500052B403 /* CenterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterDetailViewController.swift; sourceTree = "<group>"; };
 		6CEA9D8E28EDF7580052B403 /* CenterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterDetailViewModel.swift; sourceTree = "<group>"; };
 		6CF8C24C28ED7E4300496057 /* VaccinCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VaccinCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CF8C24F28ED7E4300496057 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		6CEA9D8B28EDF73F0052B403 /* CenterDetailView */ = {
 			isa = PBXGroup;
 			children = (
+				6CEA9D8C28EDF7500052B403 /* CenterDetailViewController.swift */,
 				6CEA9D8E28EDF7580052B403 /* CenterDetailViewModel.swift */,
 			);
 			path = CenterDetailView;
@@ -357,6 +360,7 @@
 				6CEA9D8428EDC2A70052B403 /* CentersRepositoryImpl.swift in Sources */,
 				6CEA9D6C28EDA8900052B403 /* CenterListViewModel.swift in Sources */,
 				6CEA9D8F28EDF7580052B403 /* CenterDetailViewModel.swift in Sources */,
+				6CEA9D8D28EDF7500052B403 /* CenterDetailViewController.swift in Sources */,
 				6CF8C25028ED7E4300496057 /* AppDelegate.swift in Sources */,
 				6CEA9D8628EDC47F0052B403 /* NetworkContainer.swift in Sources */,
 				6CEA9D7328EDB5030052B403 /* Center.swift in Sources */,
