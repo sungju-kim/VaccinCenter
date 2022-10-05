@@ -19,7 +19,7 @@ final class CenterListCell: UITableViewCell {
             label.text = $0
             label.textColor = .gray
             label.setContentHuggingPriority(.init(251), for: .horizontal)
-            label.setContentCompressionResistancePriority(.init(252), for: .horizontal)
+            label.setContentCompressionResistancePriority(.init(1000), for: .horizontal)
             stackView.addArrangedSubview(label)
         }
         stackView.axis = .vertical
