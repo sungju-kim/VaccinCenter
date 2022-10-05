@@ -19,6 +19,8 @@ final class CenterListViewModel {
     let viewDidLoad = PublishRelay<Void>()
     let didLoadCenter = BehaviorRelay<[Center]>(value: [])
     let didScrollBottom = PublishRelay<Void>()
+    let itemSelected = PublishRelay<IndexPath>()
+    let prepareForPush = PublishRelay<CenterDetailViewModel>()
 
     init() {
         bind()
@@ -37,6 +39,14 @@ private extension CenterListViewModel {
             .scan([Center](), accumulator: +)
             .map { $0.sorted { $0.updatedAt > $1.updatedAt } }
             .bind(to: didLoadCenter)
+            .disposed(by: disposeBag)
+
+        itemSelected
+            .withUnretained(self)
+            .map { viewModel, indexPath in
+                let center = viewModel.didLoadCenter.value[indexPath.item]
+                return CenterDetailViewModel(center: center)}
+            .bind(to: prepareForPush)
             .disposed(by: disposeBag)
     }
 }

@@ -56,6 +56,12 @@ final class CenterListViewController: UIViewController {
         layoutTableView()
         layoutScrollTopButton()
     }
+
+    private func pushDetailView(with viewModel: CenterDetailViewModel) {
+        let viewController = CenterDetailViewController()
+        viewController.configure(with: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 // MARK: Configure
@@ -71,6 +77,10 @@ extension CenterListViewController {
                 cell.configure(with: center)}
             .disposed(by: disposeBag)
 
+        viewModel.prepareForPush
+            .bind(onNext: pushDetailView)
+            .disposed(by: disposeBag)
+
         scrollTopButton.rx.tap
             .map { (IndexPath(row: 0, section: 0), .top, true) }
             .bind(onNext: tableView.scrollToRow)
@@ -78,6 +88,10 @@ extension CenterListViewController {
 
         tableView.rx.reachedBottom
             .bind(to: viewModel.didScrollBottom)
+            .disposed(by: disposeBag)
+
+        tableView.rx.itemSelected
+            .bind(to: viewModel.itemSelected)
             .disposed(by: disposeBag)
 
         rx.viewDidLoad
