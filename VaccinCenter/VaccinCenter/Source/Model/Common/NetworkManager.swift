@@ -34,8 +34,6 @@ final class NetworkManager {
                         observer(.failure(NetworkError.emptyData))
                     }
                 }
-
-            observer(.failure(NetworkError.badRequest))
             return Disposables.create()
         }
     }
