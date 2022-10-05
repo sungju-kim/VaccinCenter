@@ -7,8 +7,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class CenterListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setAttribute()
+    }
+}
+
+// MARK: Configure
+
+extension CenterListViewController {
+    private func setAttribute() {
+        self.title = "예방접종센터 리스트"
+        view.backgroundColor = .systemBackground
     }
 }
