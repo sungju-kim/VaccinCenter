@@ -27,3 +27,16 @@ struct CenterDTO: Decodable {
         case longitued = "lng"
     }
 }
+
+extension CenterDTO {
+    func toDomain() -> Center {
+        return Center(id: id,
+                      centerName: centerName,
+                      facilityName: facilityName,
+                      address: address,
+                      latitude: latitude,
+                      longitued: longitued,
+                      updatedAt: updatedAt,
+                      phoneNumber: phoneNumber)
+    }
+}
