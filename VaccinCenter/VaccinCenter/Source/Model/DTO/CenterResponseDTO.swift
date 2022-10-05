@@ -12,13 +12,13 @@ struct CenterResponseDTO: Decodable {
 }
 
 struct CenterDTO: Decodable {
-    let id: String
+    let id: Int
     let centerName: String
     let facilityName: String
     let address: String
-    let latitude: Double
-    let longitued: Double
-    let updatedAt: Date
+    let latitude: String
+    let longitued: String
+    let updatedAt: String
     let phoneNumber: String
 
     enum CodingKeys: String, CodingKey {
@@ -34,8 +34,8 @@ extension CenterDTO {
                       centerName: centerName,
                       facilityName: facilityName,
                       address: address,
-                      latitude: latitude,
-                      longitued: longitued,
+                      latitude: Double(latitude) ?? 0,
+                      longitued: Double(longitued) ?? 0,
                       updatedAt: updatedAt,
                       phoneNumber: phoneNumber)
     }

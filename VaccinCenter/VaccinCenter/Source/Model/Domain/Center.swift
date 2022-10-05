@@ -8,12 +8,12 @@
 import Foundation
 
 struct Center {
-    let id: String
+    let id: Int
     let centerName: String
     let facilityName: String
     let address: String
     let latitude: Double
     let longitued: Double
-    let updatedAt: Date
+    let updatedAt: String
     let phoneNumber: String
 }
