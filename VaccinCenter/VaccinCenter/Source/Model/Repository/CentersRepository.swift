@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol CentersRepository {
-    func requestCenters(page: Int) -> Single<CenterResponseDTO>
+    func requestCenters(page: Int) -> Single<[Center]>
 }
