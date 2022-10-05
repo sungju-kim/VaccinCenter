@@ -12,6 +12,7 @@ final class CenterListViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .systemBackground
+        tableView.register(CenterListCell.self, forCellReuseIdentifier: CenterListCell.identifier)
         return tableView
     }()
 
