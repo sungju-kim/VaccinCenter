@@ -10,6 +10,9 @@ import RxSwift
 import Alamofire
 
 final class NetworkManager {
+    private init() {}
+    static let shared = NetworkManager()
+
     func request(endPoint: Requetable) -> Single<Data> {
         return Single.create { observer in
             guard let url = endPoint.url else {
