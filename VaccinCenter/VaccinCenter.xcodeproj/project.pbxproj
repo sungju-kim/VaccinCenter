@@ -13,6 +13,7 @@
 		6CEA9D6C28EDA8900052B403 /* CenterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D6B28EDA8900052B403 /* CenterListViewModel.swift */; };
 		6CEA9D7128EDAF180052B403 /* CenterResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D7028EDAF180052B403 /* CenterResponseDTO.swift */; };
 		6CEA9D7328EDB5030052B403 /* Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D7228EDB5030052B403 /* Center.swift */; };
+		6CEA9D7628EDB7AE0052B403 /* VaccinCenterEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D7528EDB7AE0052B403 /* VaccinCenterEndPoint.swift */; };
 		6CEA9D7828EDB7E90052B403 /* Requetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D7728EDB7E90052B403 /* Requetable.swift */; };
 		6CF8C25028ED7E4300496057 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF8C24F28ED7E4300496057 /* AppDelegate.swift */; };
 		6CF8C25228ED7E4300496057 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF8C25128ED7E4300496057 /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 		6CEA9D6B28EDA8900052B403 /* CenterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterListViewModel.swift; sourceTree = "<group>"; };
 		6CEA9D7028EDAF180052B403 /* CenterResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterResponseDTO.swift; sourceTree = "<group>"; };
 		6CEA9D7228EDB5030052B403 /* Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Center.swift; sourceTree = "<group>"; };
+		6CEA9D7528EDB7AE0052B403 /* VaccinCenterEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinCenterEndPoint.swift; sourceTree = "<group>"; };
 		6CEA9D7728EDB7E90052B403 /* Requetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requetable.swift; sourceTree = "<group>"; };
 		6CF8C24C28ED7E4300496057 /* VaccinCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VaccinCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CF8C24F28ED7E4300496057 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		6CEA9D7428EDB79C0052B403 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				6CEA9D7528EDB7AE0052B403 /* VaccinCenterEndPoint.swift */,
 				6CEA9D7728EDB7E90052B403 /* Requetable.swift */,
 			);
 			path = API;
@@ -300,6 +303,7 @@
 				6CEA9D7328EDB5030052B403 /* Center.swift in Sources */,
 				6CEA9D7828EDB7E90052B403 /* Requetable.swift in Sources */,
 				6CF8C25228ED7E4300496057 /* SceneDelegate.swift in Sources */,
+				6CEA9D7628EDB7AE0052B403 /* VaccinCenterEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
