@@ -7,9 +7,12 @@
 
 import UIKit
 import RxSwift
+import RxAppState
+import RxCocoa
 import SnapKit
 
 final class CenterListViewController: UIViewController {
+    private let disposeBag = DisposeBag()
     private var viewModel: CenterListViewModel?
 
     private lazy var tableView: UITableView = {
@@ -48,6 +51,7 @@ final class CenterListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
 
         layoutTableView()
         layoutScrollTopButton()
@@ -60,7 +64,16 @@ extension CenterListViewController {
     func configure(with viewModel: CenterListViewModel) {
         self.viewModel = viewModel
         self.title = "예방접종센터 리스트"
-        view.backgroundColor = .systemBackground
+
+        viewModel.didLoadCenter
+            .bind(to: tableView.rx.items(cellIdentifier: CenterListCell.identifier,
+                                         cellType: CenterListCell.self)) { _, center, cell in
+                cell.configure(with: center)}
+            .disposed(by: disposeBag)
+
+        rx.viewDidLoad
+            .bind(to: viewModel.viewDidLoad)
+            .disposed(by: disposeBag)
     }
 }
 

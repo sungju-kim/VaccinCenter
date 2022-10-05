@@ -70,6 +70,17 @@ final class CenterListCell: UITableViewCell {
     }
 }
 
+// MARK: - Configure
+
+extension CenterListCell {
+    func configure(with model: Center) {
+        titleLabel.text = model.centerName
+        buildingLabel.text = model.facilityName
+        addressLabel.text = model.address
+        updatedLabel.text = model.updatedAt
+    }
+}
+
 // MARK: - Layout Section
 
 private extension CenterListCell {
