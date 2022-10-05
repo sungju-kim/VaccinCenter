@@ -17,7 +17,8 @@ final class CenterListViewModel {
     private var repository: CentersRepository
 
     let viewDidLoad = PublishRelay<Void>()
-    let didLoadCenter = PublishRelay<[Center]>()
+    let didLoadCenter = BehaviorRelay<[Center]>(value: [])
+    let didScrollBottom = PublishRelay<Void>()
 
     init() {
         bind()
@@ -28,10 +29,12 @@ final class CenterListViewModel {
 
 private extension CenterListViewModel {
     func bind() {
-        viewDidLoad
+        Observable.merge(viewDidLoad.asObservable(), didScrollBottom.asObservable())
+            .withLatestFrom(didLoadCenter) { $1.count / 10 + 1 }
             .withUnretained(self)
-            .flatMapLatest { viewModel, _ in
-                viewModel.repository.requestCenters(page: 1)}
+            .flatMapLatest { viewModel, page in
+                viewModel.repository.requestCenters(page: page)}
+            .scan([Center](), accumulator: +)
             .bind(to: didLoadCenter)
             .disposed(by: disposeBag)
     }

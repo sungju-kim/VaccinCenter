@@ -71,6 +71,10 @@ extension CenterListViewController {
                 cell.configure(with: center)}
             .disposed(by: disposeBag)
 
+        tableView.rx.reachedBottom()
+            .bind(to: viewModel.didScrollBottom)
+            .disposed(by: disposeBag)
+
         rx.viewDidLoad
             .bind(to: viewModel.viewDidLoad)
             .disposed(by: disposeBag)
