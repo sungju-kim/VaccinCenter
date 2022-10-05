@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import RxSwift
 import SnapKit
 
 final class CenterListViewController: UIViewController {
-    private let tableView: UITableView = {
+    private var viewModel: CenterListViewModel?
+
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .systemBackground
         tableView.register(CenterListCell.self, forCellReuseIdentifier: CenterListCell.identifier)
@@ -46,7 +49,6 @@ final class CenterListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setAttribute()
         layoutTableView()
         layoutScrollTopButton()
     }
@@ -55,7 +57,8 @@ final class CenterListViewController: UIViewController {
 // MARK: Configure
 
 extension CenterListViewController {
-    private func setAttribute() {
+    func configure(with viewModel: CenterListViewModel) {
+        self.viewModel = viewModel
         self.title = "예방접종센터 리스트"
         view.backgroundColor = .systemBackground
     }
