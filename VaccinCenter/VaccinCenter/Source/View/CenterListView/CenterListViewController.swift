@@ -76,7 +76,7 @@ extension CenterListViewController {
             .bind(onNext: tableView.scrollToRow)
             .disposed(by: disposeBag)
 
-        tableView.rx.reachedBottom()
+        tableView.rx.reachedBottom
             .bind(to: viewModel.didScrollBottom)
             .disposed(by: disposeBag)
 
