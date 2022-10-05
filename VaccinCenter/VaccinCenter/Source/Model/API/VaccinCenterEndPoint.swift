@@ -21,7 +21,7 @@ extension VaccinCenterEndPoint: Requetable {
     }
 
     var baseURL: URL? {
-        return URL(string: "api.odcloud.kr/api")
+        return URL(string: "https://api.odcloud.kr/api")
     }
 
     var path: String {
