@@ -71,6 +71,11 @@ extension CenterListViewController {
                 cell.configure(with: center)}
             .disposed(by: disposeBag)
 
+        scrollTopButton.rx.tap
+            .map { (IndexPath(row: 0, section: 0), .top, true) }
+            .bind(onNext: tableView.scrollToRow)
+            .disposed(by: disposeBag)
+
         tableView.rx.reachedBottom()
             .bind(to: viewModel.didScrollBottom)
             .disposed(by: disposeBag)
