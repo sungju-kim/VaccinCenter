@@ -35,6 +35,7 @@ private extension CenterListViewModel {
             .flatMapLatest { viewModel, page in
                 viewModel.repository.requestCenters(page: page)}
             .scan([Center](), accumulator: +)
+            .map { $0.sorted { $0.updatedAt > $1.updatedAt } }
             .bind(to: didLoadCenter)
             .disposed(by: disposeBag)
     }
