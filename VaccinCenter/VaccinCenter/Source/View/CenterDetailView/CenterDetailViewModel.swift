@@ -13,13 +13,15 @@ final class CenterDetailViewModel {
     private let disposeBag = DisposeBag()
 
     let viewDidLoad = PublishRelay<Void>()
-    let didLoadCenter = PublishRelay<Center>()
+    let didLoadTitle = PublishRelay<String>()
     let didLoadInformation = PublishRelay<[InformationViewModel]>()
 
     init(center: Center) {
         viewDidLoad
-            .map { center }
-            .bind(to: didLoadCenter)
+            .map { center.centerName }
+            .bind(to: didLoadTitle)
+            .disposed(by: disposeBag)
+
         viewDidLoad
             .map {
                 [InformationViewModel(value: center.centerName, type: .center),
