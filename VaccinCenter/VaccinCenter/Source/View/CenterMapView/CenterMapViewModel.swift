@@ -21,8 +21,11 @@ final class CenterMapViewModel {
     let didSetRegion = PublishRelay<(MKCoordinateRegion, Bool)>()
 
     let currentPositionButtonTapped = PublishRelay<Void>()
+    let centerButtonTapped = PublishRelay<Void>()
+
     init(center: Center) {
-        viewDidLoad
+
+        Observable.merge(viewDidLoad.asObservable(), centerButtonTapped.asObservable())
             .map { Marker(center: center) }
             .bind(to: didLoadMarker)
             .disposed(by: disposeBag)
