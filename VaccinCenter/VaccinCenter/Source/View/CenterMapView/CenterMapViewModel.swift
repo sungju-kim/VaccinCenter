@@ -20,6 +20,7 @@ final class CenterMapViewModel {
     let didLoadMarker = PublishRelay<Marker>()
     let didSetRegion = PublishRelay<(MKCoordinateRegion, Bool)>()
 
+    let currentPositionButtonTapped = PublishRelay<Void>()
     init(center: Center) {
         viewDidLoad
             .map { Marker(center: center) }
@@ -30,5 +31,10 @@ final class CenterMapViewModel {
             .map { (MKCoordinateRegion(center: $0, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), true) }
             .bind(to: didSetRegion)
             .disposed(by: disposeBag)
+
+        currentPositionButtonTapped
+            .bind(onNext: locationRepository.updateLocation)
+            .disposed(by: disposeBag)
+
     }
 }
