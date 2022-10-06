@@ -71,6 +71,16 @@ extension CenterDetailViewController {
     func configure(with viewModel: CenterDetailViewModel) {
         self.viewModel = viewModel
 
+        viewModel.didLoadTitle
+            .withUnretained(self)
+            .bind { $0.title = $1 }
+            .disposed(by: disposeBag)
+
+        viewModel.didLoadInformation
+            .bind(to: informationView.rx.items(cellIdentifier: InformationCell.identifier, cellType: InformationCell.self)) { _, viewModel, cell in
+                cell.configure(with: viewModel)}
+            .disposed(by: disposeBag)
+
         rx.viewDidLoad
             .bind(to: viewModel.viewDidLoad)
             .disposed(by: disposeBag)
