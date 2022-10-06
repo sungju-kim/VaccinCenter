@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxRelay
+import RxCocoa
 import MapKit.MKGeometry
 
 final class CenterMapViewModel {
@@ -20,23 +21,37 @@ final class CenterMapViewModel {
     let didLoadMarker = PublishRelay<Marker>()
     let didSetRegion = PublishRelay<(MKCoordinateRegion, Bool)>()
 
+    let updatedPosition = PublishRelay<CLLocationCoordinate2D>()
+
     let currentPositionButtonTapped = PublishRelay<Void>()
     let centerButtonTapped = PublishRelay<Void>()
 
     init(center: Center) {
 
-        Observable.merge(viewDidLoad.asObservable(), centerButtonTapped.asObservable())
+        viewDidLoad
+            .bind(onNext: locationRepository.updateLocation)
+            .disposed(by: disposeBag)
+
+        viewDidLoad
             .map { Marker(center: center) }
             .bind(to: didLoadMarker)
             .disposed(by: disposeBag)
 
-        Observable.merge( didLoadMarker.map { $0.coordinate }, locationRepository.didLoadLocation.asObservable())
-            .map { (MKCoordinateRegion(center: $0, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), true) }
-            .bind(to: didSetRegion)
+        locationRepository.didLoadLocation
+            .bind(to: updatedPosition)
             .disposed(by: disposeBag)
 
-        currentPositionButtonTapped
-            .bind(onNext: locationRepository.updateLocation)
+        let currentPosition = currentPositionButtonTapped
+            .withLatestFrom(updatedPosition) { $1 }
+            .share()
+
+        let centerPosition = centerButtonTapped
+            .withLatestFrom(didLoadMarker) { $1.coordinate }
+            .share()
+
+        Observable.merge( didLoadMarker.map { $0.coordinate }, currentPosition, centerPosition)
+            .map { (MKCoordinateRegion(center: $0, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), true) }
+            .bind(to: didSetRegion)
             .disposed(by: disposeBag)
 
     }

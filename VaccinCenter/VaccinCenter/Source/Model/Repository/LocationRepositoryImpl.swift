@@ -22,6 +22,7 @@ final class LocationRepositoryImpl: NSObject, CLLocationManagerDelegate, Locatio
     }
 
     func updateLocation() {
+        if let location = locationManager.location?.coordinate { didLoadLocation.accept(location) }
         locationManager.requestLocation()
     }
 
@@ -30,6 +31,11 @@ final class LocationRepositoryImpl: NSObject, CLLocationManagerDelegate, Locatio
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
+        didLoadLocation.accept(location.coordinate)
+    }
+
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        guard let location = manager.location else { return }
         didLoadLocation.accept(location.coordinate)
     }
 }
