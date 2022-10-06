@@ -107,6 +107,9 @@ extension CenterMapViewController {
             .bind(onNext: mapView.setRegion)
             .disposed(by: disposeBag)
 
+        currentPositionButton.rx.tap
+            .bind(to: viewModel.currentPositionButtonTapped)
+            .disposed(by: disposeBag)
         rx.viewDidLoad
             .bind(to: viewModel.viewDidLoad)
             .disposed(by: disposeBag)

@@ -13,6 +13,9 @@ import MapKit.MKGeometry
 final class CenterMapViewModel {
     private let disposeBag = DisposeBag()
 
+    @NetworkInjector(keypath: \.locationRepository)
+    var locationRepository: LocationRepository
+
     let viewDidLoad = PublishRelay<Void>()
     let didLoadMarker = PublishRelay<Marker>()
     let didSetRegion = PublishRelay<(MKCoordinateRegion, Bool)>()
@@ -23,8 +26,8 @@ final class CenterMapViewModel {
             .bind(to: didLoadMarker)
             .disposed(by: disposeBag)
 
-        didLoadMarker
-            .map { (MKCoordinateRegion(center: $0.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), true) }
+        Observable.merge( didLoadMarker.map { $0.coordinate }, locationRepository.didLoadLocation.asObservable())
+            .map { (MKCoordinateRegion(center: $0, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), true) }
             .bind(to: didSetRegion)
             .disposed(by: disposeBag)
     }
