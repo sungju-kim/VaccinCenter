@@ -137,7 +137,7 @@ private extension CenterMapViewController {
         view.addSubview(buttonStackView)
 
         buttonStackView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide).inset(Constraint.regular)
+            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide).inset(Constraint.max)
         }
     }
 }
