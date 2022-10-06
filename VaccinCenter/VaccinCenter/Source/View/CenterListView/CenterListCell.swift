@@ -18,6 +18,7 @@ final class CenterListCell: UITableViewCell {
             let label = UILabel()
             label.text = $0
             label.textColor = .gray
+            label.font = .systemFont(ofSize: 12, weight: .regular)
             label.setContentHuggingPriority(.init(251), for: .horizontal)
             label.setContentCompressionResistancePriority(.init(1000), for: .horizontal)
             stackView.addArrangedSubview(label)
@@ -32,6 +33,7 @@ final class CenterListCell: UITableViewCell {
         let stackView = UIStackView()
         [titleLabel, buildingLabel, addressLabel, updatedLabel].forEach {
             $0.textColor = .black
+            $0.font = .systemFont(ofSize: 12, weight: .regular)
             stackView.addArrangedSubview($0)
         }
         stackView.axis = .vertical
