@@ -13,4 +13,5 @@ final class NetworkContainer {
     static var shared = NetworkContainer()
 
     lazy var centersRepository: CentersRepository = CentersRepositoryImpl()
+    lazy var locationRepository: LocationRepository = LocationRepositoryImpl()
 }
