@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6C5E68CE28EECD7700C62422 /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E68CD28EECD7700C62422 /* InformationViewModel.swift */; };
 		6C5E68D028EED83500C62422 /* InformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E68CF28EED83500C62422 /* InformationType.swift */; };
+		6C5E68D528EEDE5200C62422 /* CenterMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E68D428EEDE5200C62422 /* CenterMapViewModel.swift */; };
 		6CEA9D5D28ED8A6E0052B403 /* UIImage + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D5C28ED8A6E0052B403 /* UIImage + extension.swift */; };
 		6CEA9D6028ED8BA00052B403 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D5F28ED8BA00052B403 /* Constraint.swift */; };
 		6CEA9D6728ED90550052B403 /* CenterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D6628ED90550052B403 /* CenterListCell.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		6C5E68CD28EECD7700C62422 /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
 		6C5E68CF28EED83500C62422 /* InformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationType.swift; sourceTree = "<group>"; };
+		6C5E68D428EEDE5200C62422 /* CenterMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMapViewModel.swift; sourceTree = "<group>"; };
 		6CEA9D5C28ED8A6E0052B403 /* UIImage + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + extension.swift"; sourceTree = "<group>"; };
 		6CEA9D5F28ED8BA00052B403 /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		6CEA9D6628ED90550052B403 /* CenterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterListCell.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C5E68D128EEDE0600C62422 /* CenterMapView */ = {
+			isa = PBXGroup;
+			children = (
+				6C5E68D428EEDE5200C62422 /* CenterMapViewModel.swift */,
+			);
+			path = CenterMapView;
+			sourceTree = "<group>";
+		};
 		6CEA9D5B28ED8A5B0052B403 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +384,7 @@
 				6CEA9D8F28EDF7580052B403 /* CenterDetailViewModel.swift in Sources */,
 				6CEA9D8D28EDF7500052B403 /* CenterDetailViewController.swift in Sources */,
 				6CF8C25028ED7E4300496057 /* AppDelegate.swift in Sources */,
+				6C5E68D528EEDE5200C62422 /* CenterMapViewModel.swift in Sources */,
 				6CEA9D8628EDC47F0052B403 /* NetworkContainer.swift in Sources */,
 				6CEA9D7328EDB5030052B403 /* Center.swift in Sources */,
 				6CEA9D7828EDB7E90052B403 /* Requetable.swift in Sources */,
