@@ -48,21 +48,23 @@ final class CenterDetailViewController: UIViewController {
         return collectionView
     }()
 
+    private let mapButton = UIBarButtonItem(title: "지도")
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
+        navigationItem.rightBarButtonItem = mapButton
 
         layoutInformationView()
     }
 
-    func layoutInformationView() {
-        view.addSubview(informationView)
-
-        informationView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
-        }
+    func pushToMapView(with viewModel: CenterMapViewModel) {
+        let viewController = CenterMapViewController()
+        viewController.configure(with: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
     }
+
 }
 
 // MARK: - Configure
@@ -81,8 +83,28 @@ extension CenterDetailViewController {
                 cell.configure(with: viewModel)}
             .disposed(by: disposeBag)
 
+        viewModel.prepareForPush
+            .bind(onNext: pushToMapView)
+            .disposed(by: disposeBag)
+
+        mapButton.rx.tap
+            .bind(to: viewModel.mapButtonTapped)
+            .disposed(by: disposeBag)
+
         rx.viewDidLoad
             .bind(to: viewModel.viewDidLoad)
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Layout Section
+
+private extension CenterDetailViewController {
+    func layoutInformationView() {
+        view.addSubview(informationView)
+
+        informationView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
 }

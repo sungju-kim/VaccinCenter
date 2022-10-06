@@ -15,6 +15,8 @@ final class CenterDetailViewModel {
     let viewDidLoad = PublishRelay<Void>()
     let didLoadTitle = PublishRelay<String>()
     let didLoadInformation = PublishRelay<[InformationViewModel]>()
+    let mapButtonTapped = PublishRelay<Void>()
+    let prepareForPush = PublishRelay<CenterMapViewModel>()
 
     init(center: Center) {
         viewDidLoad
@@ -30,6 +32,11 @@ final class CenterDetailViewModel {
                  InformationViewModel(value: center.updatedAt, type: .updateAt),
                  InformationViewModel(value: center.address, type: .address)]}
             .bind(to: didLoadInformation)
+            .disposed(by: disposeBag)
+
+        mapButtonTapped
+            .map { CenterMapViewModel(center: center) }
+            .bind(to: prepareForPush)
             .disposed(by: disposeBag)
     }
 }

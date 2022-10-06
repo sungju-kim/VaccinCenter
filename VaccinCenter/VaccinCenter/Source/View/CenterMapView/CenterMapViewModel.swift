@@ -8,4 +8,8 @@
 import Foundation
 
 final class CenterMapViewModel {
+
+    init(center: Center) {
+
+    }
 }
