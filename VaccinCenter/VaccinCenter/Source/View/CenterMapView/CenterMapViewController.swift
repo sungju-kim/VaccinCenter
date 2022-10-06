@@ -21,6 +21,63 @@ final class CenterMapViewController: UIViewController {
         return mapView
     }()
 
+    private let currentPositionButton: UIButton = {
+        let button: UIButton
+        if #available(iOS 15.0, *) {
+            var configuration = UIButton.Configuration.plain()
+            configuration.contentInsets = .init(top: Constraint.semiRegular,
+                                                leading: Constraint.semiRegular,
+                                                bottom: Constraint.semiRegular,
+                                                trailing: Constraint.semiRegular)
+
+            button = UIButton(configuration: configuration)
+        } else {
+            button = UIButton()
+            button.contentEdgeInsets = UIEdgeInsets(top: Constraint.semiRegular,
+                                                    left: Constraint.semiRegular,
+                                                    bottom: Constraint.semiRegular,
+                                                    right: Constraint.semiRegular)
+        }
+        button.setTitle("현재위치로", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemBlue
+        button.layer.cornerRadius = Constraint.min
+        return button
+    }()
+
+    private let centerButton: UIButton = {
+        let button: UIButton
+        if #available(iOS 15.0, *) {
+            var configuration = UIButton.Configuration.plain()
+            configuration.contentInsets = .init(top: Constraint.semiRegular,
+                                                leading: Constraint.semiRegular,
+                                                bottom: Constraint.semiRegular,
+                                                trailing: Constraint.semiRegular)
+
+            button = UIButton(configuration: configuration)
+        } else {
+            button = UIButton()
+            button.contentEdgeInsets = UIEdgeInsets(top: Constraint.semiRegular,
+                                                    left: Constraint.semiRegular,
+                                                    bottom: Constraint.semiRegular,
+                                                    right: Constraint.semiRegular)
+        }
+        button.setTitle("접종센터로", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemRed
+        button.layer.cornerRadius = Constraint.min
+        return button
+    }()
+
+    private lazy var buttonStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.distribution = .fillEqually
+        stackView.axis = .vertical
+        stackView.spacing = Constraint.min
+        [currentPositionButton, centerButton].forEach { stackView.addArrangedSubview($0) }
+        return stackView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +85,7 @@ final class CenterMapViewController: UIViewController {
         title = "지도"
 
         layoutMapView()
+        layoutButtonStackView()
     }
 
     private func createAnnotation(_ marker: Marker) {
@@ -62,7 +120,16 @@ private extension CenterMapViewController {
         view.addSubview(mapView)
 
         mapView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalToSuperview()
+        }
+    }
+
+    func layoutButtonStackView() {
+        view.addSubview(buttonStackView)
+
+        buttonStackView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide).inset(Constraint.regular)
         }
     }
 }
