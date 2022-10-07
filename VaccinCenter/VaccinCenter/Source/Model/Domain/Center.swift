@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Center {
     let id: Int
@@ -19,6 +20,12 @@ struct Center {
 }
 
 extension Center {
+    func distance(from coordinate: CLLocationCoordinate2D) -> CLLocationDistance {
+        let userLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        let destination = CLLocation(latitude: latitude, longitude: longitued)
+        return userLocation.distance(from: destination)
+    }
+
     func value(for type: InformationType) -> String {
         switch type {
         case .center:
