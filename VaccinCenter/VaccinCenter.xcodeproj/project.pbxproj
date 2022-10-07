@@ -17,6 +17,7 @@
 		6CE2837428EFDAB40047DBC3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2837328EFDAB40047DBC3 /* Constant.swift */; };
 		6CE2837628EFE92E0047DBC3 /* UIButton + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2837528EFE92E0047DBC3 /* UIButton + extension.swift */; };
 		6CE2837828EFEE030047DBC3 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2837728EFEE030047DBC3 /* UIColor + extension.swift */; };
+		6CE2837B28F006650047DBC3 /* RxCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 6CE2837A28F006650047DBC3 /* RxCoreLocation */; };
 		6CEA9D5D28ED8A6E0052B403 /* UIImage + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D5C28ED8A6E0052B403 /* UIImage + extension.swift */; };
 		6CEA9D6028ED8BA00052B403 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D5F28ED8BA00052B403 /* Constraint.swift */; };
 		6CEA9D6728ED90550052B403 /* CenterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D6628ED90550052B403 /* CenterListCell.swift */; };
@@ -99,6 +100,7 @@
 				6CF8C27228ED81A300496057 /* Alamofire in Frameworks */,
 				6CF8C26528ED817F00496057 /* RxCocoa in Frameworks */,
 				6CF8C26F28ED819700496057 /* SnapKit in Frameworks */,
+				6CE2837B28F006650047DBC3 /* RxCoreLocation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +309,7 @@
 				6CF8C26B28ED818B00496057 /* RxAppState */,
 				6CF8C26E28ED819700496057 /* SnapKit */,
 				6CF8C27128ED81A300496057 /* Alamofire */,
+				6CE2837A28F006650047DBC3 /* RxCoreLocation */,
 			);
 			productName = VaccinCenter;
 			productReference = 6CF8C24C28ED7E4300496057 /* VaccinCenter.app */;
@@ -341,6 +344,7 @@
 				6CF8C26A28ED818B00496057 /* XCRemoteSwiftPackageReference "RxAppState" */,
 				6CF8C26D28ED819700496057 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				6CF8C27028ED81A300496057 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				6CE2837928F006650047DBC3 /* XCRemoteSwiftPackageReference "RxCoreLocation" */,
 			);
 			productRefGroup = 6CF8C24D28ED7E4300496057 /* Products */;
 			projectDirPath = "";
@@ -622,6 +626,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6CE2837928F006650047DBC3 /* XCRemoteSwiftPackageReference "RxCoreLocation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxCoreLocation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		6CF8C26328ED817F00496057 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -657,6 +669,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6CE2837A28F006650047DBC3 /* RxCoreLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6CE2837928F006650047DBC3 /* XCRemoteSwiftPackageReference "RxCoreLocation" */;
+			productName = RxCoreLocation;
+		};
 		6CF8C26428ED817F00496057 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6CF8C26328ED817F00496057 /* XCRemoteSwiftPackageReference "RxSwift" */;
