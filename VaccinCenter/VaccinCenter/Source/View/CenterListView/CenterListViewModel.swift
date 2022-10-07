@@ -22,6 +22,9 @@ final class CenterListViewModel {
     let itemSelected = PublishRelay<IndexPath>()
     let prepareForPush = PublishRelay<CenterDetailViewModel>()
 
+    let refresh = PublishRelay<Void>()
+    let refreshed = PublishRelay<Bool>()
+
     init() {
         Observable.merge(viewDidLoad.asObservable(), didScrollBottom.asObservable())
             .withLatestFrom(didLoadCenter) { $1.count / 10 + 1 }

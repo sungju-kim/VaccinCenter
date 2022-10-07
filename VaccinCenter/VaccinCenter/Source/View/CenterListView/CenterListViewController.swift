@@ -15,10 +15,13 @@ final class CenterListViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private var viewModel: CenterListViewModel?
 
+    private let refreshControl = UIRefreshControl()
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .Custom.background
         tableView.register(CenterListCell.self, forCellReuseIdentifier: CenterListCell.identifier)
+        tableView.refreshControl = refreshControl
         return tableView
     }()
 
@@ -66,6 +69,9 @@ extension CenterListViewController {
             .bind(onNext: pushDetailView)
             .disposed(by: disposeBag)
 
+        viewModel.refreshed
+            .bind(to: refreshControl.rx.isRefreshing)
+            .disposed(by: disposeBag)
         scrollTopButton.rx.tap
             .map { (IndexPath(row: 0, section: 0), .top, true) }
             .bind(onNext: tableView.scrollToRow)
@@ -77,6 +83,10 @@ extension CenterListViewController {
 
         tableView.rx.itemSelected
             .bind(to: viewModel.itemSelected)
+            .disposed(by: disposeBag)
+
+        refreshControl.rx.controlEvent(.valueChanged)
+            .bind(to: viewModel.refresh)
             .disposed(by: disposeBag)
 
         rx.viewDidLoad
