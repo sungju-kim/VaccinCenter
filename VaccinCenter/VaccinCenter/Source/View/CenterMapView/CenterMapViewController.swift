@@ -59,6 +59,21 @@ final class CenterMapViewController: UIViewController {
         layoutMapView()
         layoutButtonStackView()
     }
+
+    private func presentAlert() {
+        let alertController = UIAlertController(title: .Alert.title, message: .Alert.message, preferredStyle: .alert)
+
+        let okAction = UIAlertAction(title: .Alert.set, style: .default) { _ in
+            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+            UIApplication.shared.open(url, options: [:])
+        }
+
+        let cancelAction = UIAlertAction(title: .Alert.cancel, style: .cancel)
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - Configure
@@ -73,6 +88,10 @@ extension CenterMapViewController {
 
         viewModel.didSetRegion
             .bind(onNext: mapView.setRegion)
+            .disposed(by: disposeBag)
+
+        viewModel.updateAuthorization
+            .bind(onNext: presentAlert)
             .disposed(by: disposeBag)
 
         currentPositionButton.rx.tap

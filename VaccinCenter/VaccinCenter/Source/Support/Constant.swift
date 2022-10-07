@@ -39,6 +39,11 @@ extension String {
         static let chat = "chat"
         static let placeholder = "placeholder"
     }
+
+    enum Alert {
+        static let title = "위치정보 권한 필요", message = "위치정보 권한을 허용해주세요."
+        static let set = "설정", cancel = "취소"
+    }
 }
 
 // MARK: - Array + extension

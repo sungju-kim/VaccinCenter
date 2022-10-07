@@ -24,8 +24,10 @@ final class CenterMapViewModel {
     let currentPositionButtonTapped = PublishRelay<Void>()
     let centerButtonTapped = PublishRelay<Void>()
 
+    let updateAuthorization = PublishRelay<Void>()
+
     init(center: Center) {
-        Observable.merge(viewDidLoad.asObservable(), currentPositionButtonTapped.asObservable())
+        currentPositionButtonTapped
             .bind(onNext: locationRepository.updateLocation)
             .disposed(by: disposeBag)
 
@@ -46,5 +48,8 @@ final class CenterMapViewModel {
             .bind(to: didSetRegion)
             .disposed(by: disposeBag)
 
+        locationRepository.updateAuthorization
+            .bind(to: updateAuthorization)
+            .disposed(by: disposeBag)
     }
 }
