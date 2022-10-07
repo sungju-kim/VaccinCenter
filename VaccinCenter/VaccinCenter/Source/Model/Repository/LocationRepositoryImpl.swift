@@ -22,14 +22,14 @@ final class LocationRepositoryImpl: NSObject, CLLocationManagerDelegate, Locatio
     }
 
     func updateLocation() {
-        if let location = locationManager.location?.coordinate { didLoadLocation.accept(location) }
-        locationManager.requestLocation()
+        locationManager.startUpdatingLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.stopUpdatingLocation()
         guard let location = locations.last else { return }
         didLoadLocation.accept(location.coordinate)
     }
