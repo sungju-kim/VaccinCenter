@@ -48,7 +48,7 @@ final class CenterDetailViewController: UIViewController {
         return collectionView
     }()
 
-    private let mapButton = UIBarButtonItem(title: "지도")
+    private let mapButton = UIBarButtonItem(title: .DetailView.rightBarButtonTitle)
 
     override func viewDidLoad() {
         super.viewDidLoad()

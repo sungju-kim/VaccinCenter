@@ -52,6 +52,7 @@ final class CenterListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        title = .ListView.title
 
         layoutTableView()
         layoutScrollTopButton()
@@ -69,7 +70,6 @@ final class CenterListViewController: UIViewController {
 extension CenterListViewController {
     func configure(with viewModel: CenterListViewModel) {
         self.viewModel = viewModel
-        self.title = "예방접종센터 리스트"
 
         viewModel.didLoadCenter
             .bind(to: tableView.rx.items(cellIdentifier: CenterListCell.identifier,

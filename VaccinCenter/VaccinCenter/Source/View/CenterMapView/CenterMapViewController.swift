@@ -38,7 +38,7 @@ final class CenterMapViewController: UIViewController {
                                                     bottom: Constraint.semiRegular,
                                                     right: Constraint.semiRegular)
         }
-        button.setTitle("현재위치로", for: .normal)
+        button.setTitle(.MapView.currentButtonTitle, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemBlue
         button.layer.cornerRadius = Constraint.min
@@ -62,7 +62,7 @@ final class CenterMapViewController: UIViewController {
                                                     bottom: Constraint.semiRegular,
                                                     right: Constraint.semiRegular)
         }
-        button.setTitle("접종센터로", for: .normal)
+        button.setTitle(.MapView.centerButtonTitle, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemRed
         button.layer.cornerRadius = Constraint.min
@@ -82,7 +82,7 @@ final class CenterMapViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
-        title = "지도"
+        title = .MapView.title
 
         layoutMapView()
         layoutButtonStackView()

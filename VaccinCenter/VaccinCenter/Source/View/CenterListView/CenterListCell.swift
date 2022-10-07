@@ -14,7 +14,7 @@ final class CenterListCell: UITableViewCell {
 
     private let titleStackView: UIStackView = {
         let stackView = UIStackView()
-        ["센터명", "건물명", "주소", "업데이트 시간"].forEach {
+        Array.Information.listTitle.forEach {
             let label = UILabel()
             label.text = $0
             label.textColor = .gray

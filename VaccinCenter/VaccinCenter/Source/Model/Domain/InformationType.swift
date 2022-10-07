@@ -17,30 +17,30 @@ enum InformationType: CaseIterable {
     var title: String {
         switch self {
         case .center:
-            return "센터명"
+            return .Information.center
         case .facility:
-            return "건물명"
+            return .Information.bulding
         case .phoneNumber:
-            return "전화번호"
+            return .Information.phoneNumber
         case .updateAt:
-            return "업데이트 시간"
+            return .Information.updateAt
         case .address:
-            return "주소"
+            return .Information.address
         }
     }
 
     var imageName: String {
         switch self {
         case .center:
-            return "hospital"
+            return .ImageName.hospital
         case .facility:
-            return "building"
+            return .ImageName.building
         case .phoneNumber:
-            return "telephone"
+            return .ImageName.telephone
         case .updateAt:
-            return "chat"
+            return .ImageName.chat
         case .address:
-            return "placeholder"
+            return .ImageName.placeholder
         }
     }
 }
