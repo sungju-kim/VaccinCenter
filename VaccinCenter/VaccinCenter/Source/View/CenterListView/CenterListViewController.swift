@@ -37,6 +37,19 @@ final class CenterListViewController: UIViewController {
         return button
     }()
 
+    private lazy var toastLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        label.textColor = UIColor.white
+        label.font = .customFont(ofSize: 12, weight: .regular)
+        label.textAlignment = .center
+        label.text = .Alert.message
+        label.layer.cornerRadius = 10
+        label.clipsToBounds  =  true
+        label.alpha = 0.0
+        return label
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .Custom.background
@@ -44,12 +57,21 @@ final class CenterListViewController: UIViewController {
 
         layoutTableView()
         layoutScrollTopButton()
+        layoutToastLabel()
     }
 
     private func pushDetailView(with viewModel: CenterDetailViewModel) {
         let viewController = CenterDetailViewController()
         viewController.configure(with: viewModel)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    private func presentToast() {
+        toastLabel.alpha = 1.0
+
+        UIView.animate(withDuration: 2.0, delay: 0.1) {
+            self.toastLabel.alpha = 0.0
+        }
     }
 }
 
@@ -112,6 +134,17 @@ private extension CenterListViewController {
         scrollTopButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(Constraint.regular)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(Constraint.regular)
+        }
+    }
+
+    func layoutToastLabel() {
+        view.addSubview(toastLabel)
+
+        toastLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(Constraint.max)
+            make.width.equalTo(view.frame.width/2)
+            make.height.equalTo(35)
         }
     }
 }
