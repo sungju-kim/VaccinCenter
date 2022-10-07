@@ -16,6 +16,7 @@
 		6C5E68DB28EEF46800C62422 /* LocationRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E68DA28EEF46800C62422 /* LocationRepositoryImpl.swift */; };
 		6CE2837428EFDAB40047DBC3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2837328EFDAB40047DBC3 /* Constant.swift */; };
 		6CE2837628EFE92E0047DBC3 /* UIButton + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2837528EFE92E0047DBC3 /* UIButton + extension.swift */; };
+		6CE2837828EFEE030047DBC3 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2837728EFEE030047DBC3 /* UIColor + extension.swift */; };
 		6CEA9D5D28ED8A6E0052B403 /* UIImage + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D5C28ED8A6E0052B403 /* UIImage + extension.swift */; };
 		6CEA9D6028ED8BA00052B403 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D5F28ED8BA00052B403 /* Constraint.swift */; };
 		6CEA9D6728ED90550052B403 /* CenterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA9D6628ED90550052B403 /* CenterListCell.swift */; };
@@ -58,6 +59,7 @@
 		6C5E68DA28EEF46800C62422 /* LocationRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepositoryImpl.swift; sourceTree = "<group>"; };
 		6CE2837328EFDAB40047DBC3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		6CE2837528EFE92E0047DBC3 /* UIButton + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + extension.swift"; sourceTree = "<group>"; };
+		6CE2837728EFEE030047DBC3 /* UIColor + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extension.swift"; sourceTree = "<group>"; };
 		6CEA9D5C28ED8A6E0052B403 /* UIImage + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + extension.swift"; sourceTree = "<group>"; };
 		6CEA9D5F28ED8BA00052B403 /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		6CEA9D6628ED90550052B403 /* CenterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterListCell.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				6CEA9D5C28ED8A6E0052B403 /* UIImage + extension.swift */,
 				6CEA9D8928EDF1780052B403 /* Reactive + extension.swift */,
 				6CE2837528EFE92E0047DBC3 /* UIButton + extension.swift */,
+				6CE2837728EFEE030047DBC3 /* UIColor + extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				6CF8C25028ED7E4300496057 /* AppDelegate.swift in Sources */,
 				6C5E68D528EEDE5200C62422 /* CenterMapViewModel.swift in Sources */,
 				6CEA9D8628EDC47F0052B403 /* NetworkContainer.swift in Sources */,
+				6CE2837828EFEE030047DBC3 /* UIColor + extension.swift in Sources */,
 				6CEA9D7328EDB5030052B403 /* Center.swift in Sources */,
 				6C5E68D328EEDE1900C62422 /* CenterMapViewController.swift in Sources */,
 				6CEA9D7828EDB7E90052B403 /* Requetable.swift in Sources */,

@@ -68,7 +68,7 @@ extension InformationCell {
     }
 
     private func setAttribute() {
-        backgroundColor = .systemBackground
+        backgroundColor = .Custom.background
 
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOpacity = 1.0

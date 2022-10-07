@@ -17,7 +17,7 @@ final class CenterListViewController: UIViewController {
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .systemBackground
+        tableView.backgroundColor = .Custom.background
         tableView.register(CenterListCell.self, forCellReuseIdentifier: CenterListCell.identifier)
         return tableView
     }()
@@ -26,7 +26,7 @@ final class CenterListViewController: UIViewController {
         let button = UIButton()
         button.insertPadding()
         button.setImage(.Custom.topAlignment, for: .normal)
-        button.backgroundColor = .systemBackground
+        button.backgroundColor = .Custom.background
         button.layer.shadowColor = UIColor.gray.cgColor
         button.layer.shadowOpacity = 1.0
         button.layer.shadowOffset = CGSize.zero
@@ -36,7 +36,7 @@ final class CenterListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .Custom.background
         title = .ListView.title
 
         layoutTableView()

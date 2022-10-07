@@ -53,7 +53,7 @@ final class CenterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .Custom.background
         navigationItem.rightBarButtonItem = mapButton
 
         layoutInformationView()
