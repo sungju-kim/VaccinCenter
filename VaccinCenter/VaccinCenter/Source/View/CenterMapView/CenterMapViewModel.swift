@@ -21,8 +21,6 @@ final class CenterMapViewModel {
     let didLoadMarker = PublishRelay<Marker>()
     let didSetRegion = PublishRelay<(MKCoordinateRegion, Bool)>()
 
-    let updatedPosition = PublishRelay<CLLocationCoordinate2D>()
-
     let currentPositionButtonTapped = PublishRelay<Void>()
     let centerButtonTapped = PublishRelay<Void>()
 
@@ -37,19 +35,15 @@ final class CenterMapViewModel {
             .bind(to: didLoadMarker)
             .disposed(by: disposeBag)
 
-        locationRepository.didLoadLocation
-            .bind(to: updatedPosition)
-            .disposed(by: disposeBag)
-
         let currentPosition = currentPositionButtonTapped
-            .withLatestFrom(updatedPosition) { $1 }
+            .withLatestFrom(locationRepository.didLoadLocation) { $1 }
             .share()
 
-        let centerPosition = centerButtonTapped
-            .withLatestFrom(didLoadMarker) { $1.coordinate }
+        let centerPosition = Observable.merge(centerButtonTapped.asObservable(), viewDidLoad.asObservable())
+            .map { CLLocationCoordinate2D(latitude: center.latitude, longitude: center.longitued) }
             .share()
 
-        Observable.merge( didLoadMarker.map { $0.coordinate }, currentPosition, centerPosition)
+        Observable.merge(centerPosition, currentPosition)
             .map { (MKCoordinateRegion(center: $0, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), true) }
             .bind(to: didSetRegion)
             .disposed(by: disposeBag)
