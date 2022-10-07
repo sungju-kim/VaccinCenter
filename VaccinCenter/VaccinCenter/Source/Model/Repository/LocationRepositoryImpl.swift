@@ -25,16 +25,23 @@ final class LocationRepositoryImpl: NSObject, CLLocationManagerDelegate, Locatio
 
     override init() {
         super.init()
+        let authorization = locationManager.rx.didChangeAuthorization.share()
 
         Observable.merge(
             locationManager.rx.didUpdateLocations.compactMap { $0.locations.last?.coordinate},
-            locationManager.rx.didChangeAuthorization.compactMap { $0.manager.location?.coordinate }
+            authorization.compactMap { $0.manager.location?.coordinate }
         )
         .withUnretained(self)
-        .map { $0.locationManager.stopUpdatingLocation()
-            return $1 }
+        .do { $0.0.locationManager.stopUpdatingLocation() }
+        .map { $1 }
         .bind(to: didLoadLocation)
         .disposed(by: disposeBag)
+
+        authorization
+            .filter { $0.status == .denied}
+            .map { _ in }
+            .bind(to: authorizationDenied)
+            .disposed(by: disposeBag)
     }
 
     func updateLocation() {

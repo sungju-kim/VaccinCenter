@@ -94,6 +94,11 @@ extension CenterListViewController {
         viewModel.refreshed
             .bind(to: refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
+
+        viewModel.authorizationDenied
+            .bind(onNext: presentToast)
+            .disposed(by: disposeBag)
+
         scrollTopButton.rx.tap
             .map { (IndexPath(row: 0, section: 0), .top, true) }
             .bind(onNext: tableView.scrollToRow)
