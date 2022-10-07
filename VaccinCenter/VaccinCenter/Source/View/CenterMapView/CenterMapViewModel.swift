@@ -25,8 +25,7 @@ final class CenterMapViewModel {
     let centerButtonTapped = PublishRelay<Void>()
 
     init(center: Center) {
-
-        viewDidLoad
+        Observable.merge(viewDidLoad.asObservable(), currentPositionButtonTapped.asObservable())
             .bind(onNext: locationRepository.updateLocation)
             .disposed(by: disposeBag)
 
@@ -35,8 +34,7 @@ final class CenterMapViewModel {
             .bind(to: didLoadMarker)
             .disposed(by: disposeBag)
 
-        let currentPosition = currentPositionButtonTapped
-            .withLatestFrom(locationRepository.didLoadLocation) { $1 }
+        let currentPosition = Observable.zip(currentPositionButtonTapped.asObservable(), locationRepository.didLoadLocation.asObservable()) { $1 }
             .share()
 
         let centerPosition = Observable.merge(centerButtonTapped.asObservable(), viewDidLoad.asObservable())
