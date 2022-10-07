@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C316A0D28F02634006A7473 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6CE2837F28F020570047DBC3 /* SF-Pro-Display-Bold.otf */; };
+		6C316A0E28F02637006A7473 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6CE2837D28F020570047DBC3 /* SF-Pro-Display-Medium.otf */; };
+		6C316A0F28F02639006A7473 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6CE2837E28F020570047DBC3 /* SF-Pro-Display-Regular.otf */; };
+		6C316A1028F0263B006A7473 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6CE2837C28F020560047DBC3 /* SF-Pro-Display-Semibold.otf */; };
 		6C5E68CE28EECD7700C62422 /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E68CD28EECD7700C62422 /* InformationViewModel.swift */; };
 		6C5E68D028EED83500C62422 /* InformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E68CF28EED83500C62422 /* InformationType.swift */; };
 		6C5E68D328EEDE1900C62422 /* CenterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E68D228EEDE1900C62422 /* CenterMapViewController.swift */; };
@@ -61,6 +65,10 @@
 		6CE2837328EFDAB40047DBC3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		6CE2837528EFE92E0047DBC3 /* UIButton + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + extension.swift"; sourceTree = "<group>"; };
 		6CE2837728EFEE030047DBC3 /* UIColor + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extension.swift"; sourceTree = "<group>"; };
+		6CE2837C28F020560047DBC3 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		6CE2837D28F020570047DBC3 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		6CE2837E28F020570047DBC3 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		6CE2837F28F020570047DBC3 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		6CEA9D5C28ED8A6E0052B403 /* UIImage + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + extension.swift"; sourceTree = "<group>"; };
 		6CEA9D5F28ED8BA00052B403 /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		6CEA9D6628ED90550052B403 /* CenterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterListCell.swift; sourceTree = "<group>"; };
@@ -115,6 +123,17 @@
 				6C5E68D628EEF04C00C62422 /* Marker.swift */,
 			);
 			path = CenterMapView;
+			sourceTree = "<group>";
+		};
+		6CE2838028F020600047DBC3 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				6CE2837F28F020570047DBC3 /* SF-Pro-Display-Bold.otf */,
+				6CE2837D28F020570047DBC3 /* SF-Pro-Display-Medium.otf */,
+				6CE2837E28F020570047DBC3 /* SF-Pro-Display-Regular.otf */,
+				6CE2837C28F020560047DBC3 /* SF-Pro-Display-Semibold.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		6CEA9D5B28ED8A5B0052B403 /* Extension */ = {
@@ -180,6 +199,7 @@
 		6CEA9D6528ED901C0052B403 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				6CE2838028F020600047DBC3 /* Font */,
 				6CF8C25828ED7E4500496057 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -360,8 +380,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C316A1028F0263B006A7473 /* SF-Pro-Display-Semibold.otf in Resources */,
+				6C316A0E28F02637006A7473 /* SF-Pro-Display-Medium.otf in Resources */,
 				6CF8C27428ED825900496057 /* .swiftlint.yml in Resources */,
 				6CF8C25928ED7E4500496057 /* Assets.xcassets in Resources */,
+				6C316A0F28F02639006A7473 /* SF-Pro-Display-Regular.otf in Resources */,
+				6C316A0D28F02634006A7473 /* SF-Pro-Display-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
