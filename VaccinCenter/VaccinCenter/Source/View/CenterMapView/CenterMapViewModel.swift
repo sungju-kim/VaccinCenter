@@ -24,7 +24,7 @@ final class CenterMapViewModel {
     let currentPositionButtonTapped = PublishRelay<Void>()
     let centerButtonTapped = PublishRelay<Void>()
 
-    let updateAuthorization = PublishRelay<Void>()
+    let authorizationDenied = PublishRelay<Void>()
 
     init(center: Center) {
         currentPositionButtonTapped
@@ -48,8 +48,8 @@ final class CenterMapViewModel {
             .bind(to: didSetRegion)
             .disposed(by: disposeBag)
 
-        locationRepository.updateAuthorization
-            .bind(to: updateAuthorization)
+        locationRepository.authorizationDenied
+            .bind(to: authorizationDenied)
             .disposed(by: disposeBag)
     }
 }

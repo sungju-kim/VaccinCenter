@@ -14,7 +14,7 @@ import RxCoreLocation
 final class LocationRepositoryImpl: NSObject, CLLocationManagerDelegate, LocationRepository {
     private let disposeBag = DisposeBag()
     private(set) var didLoadLocation = PublishRelay<CLLocationCoordinate2D>()
-    private(set) var updateAuthorization = PublishRelay<Void>()
+    private(set) var authorizationDenied = PublishRelay<Void>()
 
     private lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
@@ -45,7 +45,7 @@ final class LocationRepositoryImpl: NSObject, CLLocationManagerDelegate, Locatio
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
         default:
-            updateAuthorization.accept(())
+            authorizationDenied.accept(())
         }
     }
 }

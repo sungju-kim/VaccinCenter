@@ -92,7 +92,7 @@ extension CenterMapViewController {
             .bind(onNext: mapView.setRegion)
             .disposed(by: disposeBag)
 
-        viewModel.updateAuthorization
+        viewModel.authorizationDenied
             .bind(onNext: presentAlert)
             .disposed(by: disposeBag)
 

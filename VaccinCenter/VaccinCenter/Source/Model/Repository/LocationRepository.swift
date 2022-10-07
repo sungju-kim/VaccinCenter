@@ -11,6 +11,6 @@ import RxRelay
 
 protocol LocationRepository {
     var didLoadLocation: PublishRelay<CLLocationCoordinate2D> { get }
-    var updateAuthorization: PublishRelay<Void> { get }
+    var authorizationDenied: PublishRelay<Void> { get }
     func updateLocation()
 }
