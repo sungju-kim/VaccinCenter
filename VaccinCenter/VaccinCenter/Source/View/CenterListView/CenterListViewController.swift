@@ -23,24 +23,9 @@ final class CenterListViewController: UIViewController {
     }()
 
     private let scrollTopButton: UIButton = {
-        let button: UIButton
-        if #available(iOS 15.0, *) {
-            var configuration = UIButton.Configuration.plain()
-            configuration.image = .Custom.topAlignment
-            configuration.contentInsets = .init(top: Constraint.semiRegular,
-                                                leading: Constraint.semiRegular,
-                                                bottom: Constraint.semiRegular,
-                                                trailing: Constraint.semiRegular)
-
-            button = UIButton(configuration: configuration)
-        } else {
-            button = UIButton()
-            button.setImage(.Custom.topAlignment, for: .normal)
-            button.contentEdgeInsets = UIEdgeInsets(top: Constraint.semiRegular,
-                                                    left: Constraint.semiRegular,
-                                                    bottom: Constraint.semiRegular,
-                                                    right: Constraint.semiRegular)
-        }
+        let button = UIButton()
+        button.insertPadding()
+        button.setImage(.Custom.topAlignment, for: .normal)
         button.backgroundColor = .systemBackground
         button.layer.shadowColor = UIColor.gray.cgColor
         button.layer.shadowOpacity = 1.0

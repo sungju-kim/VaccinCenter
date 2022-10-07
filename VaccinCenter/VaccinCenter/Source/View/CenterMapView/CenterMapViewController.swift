@@ -22,22 +22,8 @@ final class CenterMapViewController: UIViewController {
     }()
 
     private let currentPositionButton: UIButton = {
-        let button: UIButton
-        if #available(iOS 15.0, *) {
-            var configuration = UIButton.Configuration.plain()
-            configuration.contentInsets = .init(top: Constraint.semiRegular,
-                                                leading: Constraint.semiRegular,
-                                                bottom: Constraint.semiRegular,
-                                                trailing: Constraint.semiRegular)
-
-            button = UIButton(configuration: configuration)
-        } else {
-            button = UIButton()
-            button.contentEdgeInsets = UIEdgeInsets(top: Constraint.semiRegular,
-                                                    left: Constraint.semiRegular,
-                                                    bottom: Constraint.semiRegular,
-                                                    right: Constraint.semiRegular)
-        }
+        let button = UIButton()
+        button.insertPadding()
         button.setTitle(.MapView.currentButtonTitle, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemBlue
@@ -46,22 +32,8 @@ final class CenterMapViewController: UIViewController {
     }()
 
     private let centerButton: UIButton = {
-        let button: UIButton
-        if #available(iOS 15.0, *) {
-            var configuration = UIButton.Configuration.plain()
-            configuration.contentInsets = .init(top: Constraint.semiRegular,
-                                                leading: Constraint.semiRegular,
-                                                bottom: Constraint.semiRegular,
-                                                trailing: Constraint.semiRegular)
-
-            button = UIButton(configuration: configuration)
-        } else {
-            button = UIButton()
-            button.contentEdgeInsets = UIEdgeInsets(top: Constraint.semiRegular,
-                                                    left: Constraint.semiRegular,
-                                                    bottom: Constraint.semiRegular,
-                                                    right: Constraint.semiRegular)
-        }
+        let button = UIButton()
+        button.insertPadding()
         button.setTitle(.MapView.centerButtonTitle, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemRed
