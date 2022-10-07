@@ -25,6 +25,7 @@ final class CenterMapViewController: UIViewController {
         let button = UIButton()
         button.insertPadding()
         button.setTitle(.MapView.currentButtonTitle, for: .normal)
+        button.titleLabel?.font = .customFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemBlue
         button.layer.cornerRadius = Constraint.min
@@ -35,6 +36,7 @@ final class CenterMapViewController: UIViewController {
         let button = UIButton()
         button.insertPadding()
         button.setTitle(.MapView.centerButtonTitle, for: .normal)
+        button.titleLabel?.font = .customFont(ofSize: 12, weight: .medium)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemRed
         button.layer.cornerRadius = Constraint.min

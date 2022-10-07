@@ -22,7 +22,7 @@ final class InformationCell: UICollectionViewCell {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .bold)
+        label.font = .customFont(ofSize: 14, weight: .bold)
         label.textAlignment = .center
         label.setContentCompressionResistancePriority(.init(1000), for: .vertical)
 
@@ -31,7 +31,7 @@ final class InformationCell: UICollectionViewCell {
 
     private lazy var infoLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 12, weight: .semibold)
+        label.font = .customFont(ofSize: 12, weight: .semibold)
         label.textAlignment = .center
         label.setContentCompressionResistancePriority(.init(1000), for: .vertical)
         label.lineBreakMode = .byWordWrapping
