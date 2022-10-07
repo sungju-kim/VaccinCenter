@@ -17,3 +17,20 @@ struct Center {
     let updatedAt: String
     let phoneNumber: String
 }
+
+extension Center {
+    func value(for type: InformationType) -> String {
+        switch type {
+        case .center:
+            return centerName
+        case .facility:
+            return facilityName
+        case .phoneNumber:
+            return phoneNumber
+        case .updateAt:
+            return updatedAt
+        case .address:
+            return address
+        }
+    }
+}

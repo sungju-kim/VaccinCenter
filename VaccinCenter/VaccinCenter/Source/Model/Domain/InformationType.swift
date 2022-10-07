@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum InformationType {
+enum InformationType: CaseIterable {
     case center
     case facility
     case phoneNumber

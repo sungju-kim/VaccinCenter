@@ -25,12 +25,7 @@ final class CenterDetailViewModel {
             .disposed(by: disposeBag)
 
         viewDidLoad
-            .map {
-                [InformationViewModel(value: center.centerName, type: .center),
-                 InformationViewModel(value: center.facilityName, type: .facility),
-                 InformationViewModel(value: center.phoneNumber, type: .phoneNumber),
-                 InformationViewModel(value: center.updatedAt, type: .updateAt),
-                 InformationViewModel(value: center.address, type: .address)]}
+            .map { InformationType.allCases.map { InformationViewModel(value: center.value(for: $0), type: $0) } }
             .bind(to: didLoadInformation)
             .disposed(by: disposeBag)
 
