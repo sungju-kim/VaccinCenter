@@ -87,10 +87,6 @@ final class CenterMapViewController: UIViewController {
         layoutMapView()
         layoutButtonStackView()
     }
-
-    private func createAnnotation(_ marker: Marker) {
-        mapView.addAnnotation(marker)
-    }
 }
 
 // MARK: - Configure
@@ -100,7 +96,7 @@ extension CenterMapViewController {
         self.viewModel = viewModel
 
         viewModel.didLoadMarker
-            .bind(onNext: createAnnotation)
+            .bind(onNext: mapView.addAnnotation)
             .disposed(by: disposeBag)
 
         viewModel.didSetRegion
@@ -137,7 +133,8 @@ private extension CenterMapViewController {
         view.addSubview(buttonStackView)
 
         buttonStackView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide).inset(Constraint.max)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(Constraint.regular)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(Constraint.semiMax)
         }
     }
 }
