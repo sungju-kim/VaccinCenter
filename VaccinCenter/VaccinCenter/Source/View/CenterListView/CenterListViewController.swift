@@ -84,6 +84,7 @@ extension CenterListViewController {
         viewModel.didLoadCenter
             .bind(to: tableView.rx.items(cellIdentifier: CenterListCell.identifier,
                                          cellType: CenterListCell.self)) { _, center, cell in
+                cell.selectionStyle = .none
                 cell.configure(with: center)}
             .disposed(by: disposeBag)
 
