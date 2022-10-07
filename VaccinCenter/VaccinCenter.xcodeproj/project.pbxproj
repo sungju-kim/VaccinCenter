@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C316A0C28F0215B006A7473 /* UIFont + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C316A0B28F0215B006A7473 /* UIFont + extension.swift */; };
 		6C316A0D28F02634006A7473 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6CE2837F28F020570047DBC3 /* SF-Pro-Display-Bold.otf */; };
 		6C316A0E28F02637006A7473 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6CE2837D28F020570047DBC3 /* SF-Pro-Display-Medium.otf */; };
 		6C316A0F28F02639006A7473 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6CE2837E28F020570047DBC3 /* SF-Pro-Display-Regular.otf */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C316A0B28F0215B006A7473 /* UIFont + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + extension.swift"; sourceTree = "<group>"; };
 		6C5E68CD28EECD7700C62422 /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
 		6C5E68CF28EED83500C62422 /* InformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationType.swift; sourceTree = "<group>"; };
 		6C5E68D228EEDE1900C62422 /* CenterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMapViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				6CEA9D8928EDF1780052B403 /* Reactive + extension.swift */,
 				6CE2837528EFE92E0047DBC3 /* UIButton + extension.swift */,
 				6CE2837728EFEE030047DBC3 /* UIColor + extension.swift */,
+				6C316A0B28F0215B006A7473 /* UIFont + extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				6CE2837428EFDAB40047DBC3 /* Constant.swift in Sources */,
 				6C5E68D928EEF16E00C62422 /* LocationRepository.swift in Sources */,
 				6CEA9D8D28EDF7500052B403 /* CenterDetailViewController.swift in Sources */,
+				6C316A0C28F0215B006A7473 /* UIFont + extension.swift in Sources */,
 				6C5E68D728EEF04C00C62422 /* Marker.swift in Sources */,
 				6CF8C25028ED7E4300496057 /* AppDelegate.swift in Sources */,
 				6C5E68D528EEDE5200C62422 /* CenterMapViewModel.swift in Sources */,
